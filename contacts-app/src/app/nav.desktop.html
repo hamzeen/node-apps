@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a routerLink="/">
+       <h3 class="navbar-item">Contacts</h3>
+    </a>
+  </div>
+
+  <div class="navbar-item nav-search" *ngIf="authService.isLoggedIn">
+    <input type="text" placeholder="Search" [(ngModel)]="searchText"
+						   (keyup) = "filterContactsByText()"/>
+  </div>
+
+
+
+  <div class="navbar-end" *ngIf="authService.isLoggedIn">
+   
+    <div class="navbar-item">
+      <div class="field is-grouped">
+      
+        <p class="control">
+          <a class="button is-blue" title="Logout" (click)="logout()">
+              <span class="icon">
+                <i class="fa fa-sign-out"></i>
+              </span>
+            </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</nav>

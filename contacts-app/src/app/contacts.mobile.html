@@ -1,0 +1,26 @@
+<div class="content column is-11 is-mobile" style="width:360px">
+    <div class="app-loader" *ngIf="!filteredContacts" >
+        <div class="line-scale-pulse-out">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <table *ngIf="filteredContacts" class="contacts">
+        <tbody>
+        <tr (click)="showContact(contact.id,$event)" *ngFor="let contact of filteredContacts"
+            [class.selected]="contact.selected" title="Show Contact">
+            <td title="Contact Photo" class="photo">
+                <figure class="image is-48x48 hide-on-hover">
+                    <img src="{{contact.imageData}}">
+                </figure>
+            </td>
+            <td title="Name">{{contact.name}}</td>
+        </tr>
+        </tbody>
+    </table>
+ </div>
+<a class="add-contact" routerLink="/edit" title="Add Contact">
+    <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+</a>

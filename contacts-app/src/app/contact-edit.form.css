@@ -1,0 +1,11 @@
+@media (max-width: 360px) {
+    .contact-container{
+        padding: 10px 15px;
+    }
+}
+@media (min-width: 1024px) {
+    .contact-container{
+        width: 50%;
+        margin: 50px auto;
+    }
+}

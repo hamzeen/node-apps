@@ -1,0 +1,26 @@
+.login-container{
+    margin: 0 auto;
+}
+.new-user-txt{
+    vertical-align: bottom;
+    display: inline-block;
+    margin-right: 10px;
+}
+.control{
+    width:100%;
+}
+.register{
+    float:right;
+}
+@media (min-width: 1024px) {
+    .login-container{
+        width: 20%;
+        margin-top: 200px;
+    }
+}
+@media (max-width: 360px) {
+    .login-container{
+        padding: 10px;
+        margin-top: 100px;
+    }
+}

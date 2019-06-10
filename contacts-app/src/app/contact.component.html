@@ -1,0 +1,62 @@
+<div class="app-loader" *ngIf="!contact" >
+     <div class="line-scale-pulse-out">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+     </div>
+</div>
+
+<div class="contact-container" *ngIf="contact">
+    <div class="header">
+        <div class="header-item contact-img">
+            <figure class="image is-128x128">
+                <img src="{{contact.imageData}}">
+            </figure>
+        </div>
+        <div class="header-item">
+            <h2 class="title">{{contact.name}}</h2>
+            <span>
+                <a class="contact-control" (click)="$event.stopPropagation();deleteContact()">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </a>
+                <a class="contact-control" (click)="editContact()">
+                    <i class="fa fa-pencil" aria-hidden="true" ></i>
+                </a>
+            </span>
+        </div>
+        
+    </div>
+    <div class="detail">
+        <div class="detail-item">
+            <div class="row">
+                <div class="cell cell-icon">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                </div>
+                <div class="cell">
+                    {{contact.email}}
+                </div>
+            </div>
+        </div>
+        <div class="detail-item">
+            <div class="row">
+                <div class="cell cell-icon">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                </div>
+                <div class="cell">
+                    {{contact.phone}}
+                </div>
+            </div>
+        </div>
+        <div class="detail-item">
+            <div class="row">
+                <div class="cell cell-icon">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </div>
+                <div class="cell">
+                    {{contactEnum[contact.category]}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

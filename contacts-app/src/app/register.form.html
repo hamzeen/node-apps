@@ -1,0 +1,38 @@
+<div class="login-container">
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+        <div class="field">
+        <div class="control">
+            <input class="input" type="text" placeholder="Username" [(ngModel)]="signupInfo.username" name="username"
+               #username="ngModel">
+        </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input class="input" type="text" placeholder="Email" [(ngModel)]="signupInfo.email" name="email"
+               #email="ngModel">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input class="input" type="password" placeholder="Password" [(ngModel)]="signupInfo.password" name="password"
+               #username="ngModel">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <input class="input" type="password" placeholder="Confirm Password" [(ngModel)]="signupInfo.confirmPassword" name="confirmPassword"
+               #confirmPassword="ngModel">
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-primary" type="submit" [disabled]="!registerForm.form.valid"  [class.is-loading]="regsitering">Register</button>
+                <div class="register">
+                    <span class="new-user-txt">Existing User?</span>
+                    <button class="button is-primary" routerLink="/login">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

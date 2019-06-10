@@ -1,0 +1,110 @@
+tr:hover .show-on-hover{
+    display:inline-block;
+}
+tr:hover .hide-on-hover{
+    display:none;
+}
+.show-on-hover{
+    display:none;
+}
+.hide-on-hover{
+    display:inline-block;
+}
+.contacts td{
+    vertical-align:middle !important;
+}
+.is-blue{
+    background-color: rgb(99, 133, 220) !important;
+    border: none !important;
+}
+
+.is-blue:hover{
+    background-color: #0048ff !important;
+}
+.user-check{
+    height:48px;
+    width:48px;
+}
+.user-check .control{
+    transform: translate(-50%,-50%);
+    top: 50%;
+    margin: 0px 20px;
+}
+
+input[type=checkbox] {
+  transform: scale(1.5);
+}
+
+
+input[type=checkbox] {
+    font-size: 12px;
+    visibility: hidden;
+}
+
+
+input[type=checkbox]:after {
+    content: " ";
+    background-color: #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: black;
+    width: 15px;
+    height: 15px;
+    visibility: visible;
+    border: 1px solid black;
+    padding-left: 1px;
+}
+input[type=checkbox]:checked:after {
+    content: "\2714";
+      padding:-5px;
+      font-weight:bold;
+}
+
+.contact-control{
+    padding: 0 20px;
+}
+
+.selected{
+    border-left: 5px solid #2a56c6;
+    background-color: whitesmoke;
+}
+.selected .show-on-hover{
+    display:inline-block;
+}
+.selected .hide-on-hover{
+    display:none;
+}
+.app-loader{
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+.app-loader>div>div{
+    background:#2a56c6;
+    
+}
+
+.contact-control i{
+    vertical-align:middle;
+}
+.contact-control:hover{
+    background: blue;
+}
+.contact-control:hover i{
+    color: white !important;
+}
+.contact-control{
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+
+@media (max-width: 360px) {
+    .app-container{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}

@@ -1,0 +1,44 @@
+<div class="content column is-11">
+<div class="app-loader" *ngIf="!filteredContacts" >
+     <div class="line-scale-pulse-out">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+     </div>
+</div>
+ <table *ngIf="filteredContacts"  class="contacts">
+    <tbody>
+    <tr (click)="showContact(contact.id,$event)" *ngFor="let contact of filteredContacts"
+        [class.selected]="contact.selected" title="Show Contact">
+        <td title="Contact Photo">
+            <figure class="image is-48x48 hide-on-hover">
+                <img src="{{contact.imageData}}">
+            </figure>
+            <div class="field show-on-hover user-check" title="Select Contact">
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" (click)="$event.stopPropagation();selectContact(contact,$event)">
+                    </label>
+                </div>
+            </div>
+        </td>
+        <td title="Name">{{contact.name}}</td>
+        <td><a href="mailto:reachatwick@gmail.com" class="mail-link"
+             (click)="$event.stopPropagation();" title="Email Contact">{{contact.email}}</a></td>
+        <td title="Phone">{{contact.phone}}</td>
+        <td>
+            <a class="show-on-hover contact-control" (click)="editContact(contact.id)" title="Edit Contact">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+            <a class="show-on-hover contact-control" (click)="$event.stopPropagation();deleteContact(contact.id)" title="Delete Contact">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+ </div>
+<a class="add-contact" routerLink="/edit" title="Add Contact">
+    <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+</a>

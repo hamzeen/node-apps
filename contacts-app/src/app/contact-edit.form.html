@@ -1,0 +1,80 @@
+<div class="app-loader" *ngIf="!contact" >
+     <div class="line-scale-pulse-out">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+     </div>
+</div>
+
+<div class="contact-container" *ngIf="contact">
+    <form (ngSubmit)="saveContact(contactForm.valid)" #contactForm="ngForm">
+        <div class="field">
+            <figure class="image is-200x200">
+                <img-cropper #cropper [image]="data" [settings]="cropperSettings" 
+                (onCrop)="cropped()"></img-cropper>
+                <div class="file-upload">
+                    <input id="custom-input" type="file" (change)="fileChangeListener($event)" class="photo">
+                </div>
+            </figure>
+        </div>
+
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Name" [(ngModel)]="contact.name" name="name"
+               #name="ngModel" required  [class.is-danger]="name.invalid && (name.dirty ||
+                    name.touched || contactForm.submitted)">
+            </div>
+            <p class="help is-danger" [style.display]="name.invalid && (name.dirty || name.touched  || contactForm.submitted)?'block':'none'">Name is required.</p>
+        </div>
+
+        <div class="field">
+            <label class="label">Phone No.</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Phone No." [(ngModel)]="contact.phone" name="phone"
+               #phone="ngModel">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input" type="enail" placeholder="Email" value="hello@" 
+                [(ngModel)]="contact.email" name="email"
+               #email="ngModel">
+
+                <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                
+            </div>
+           
+        </div>
+
+        <div class="field">
+            <label class="label">Category</label>
+            <div class="control">
+                <div class="select" [class.is-danger]="category.invalid && (category.dirty ||
+                    category.touched || contactForm.submitted)">
+                    <select class="form-control" required [(ngModel)]="contact.category" name="category" #category="ngModel">
+                        <option *ngFor="let item of categories | keys" [value]="item.key">{{item.value}}</option>
+                    </select>
+                </div>
+                <p class="help is-danger" [style.display]="category.invalid && (category.dirty ||
+                 category.touched || contactForm.submitted)?'block':'none'"
+                 required>Category is required.</p>
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button" type="submit">Save</button>
+            </div>
+            <div class="control">
+                <button class="button is-link" routerLink="/">Cancel</button>
+            </div>
+        </div>
+    </form>
+    
+</div>

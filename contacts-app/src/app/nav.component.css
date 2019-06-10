@@ -1,0 +1,37 @@
+.navbar{
+    background-color: #2a56c6 !important;
+    
+}
+.navbar *{
+    color:white;
+}
+.navbar h3{
+    font-size:22px;
+}
+.nav-search{
+    margin: 0 auto;
+}
+.nav-search input{
+    height: 100%;
+    width: 500px;
+    padding: 0px 20px;
+    border-radius: 5px;
+    background-color: #4c71cf;
+    box-shadow: none;
+    color: #8aa2e0;
+    font-size: 22px;
+    border-color: transparent;
+}
+.nav-search input:focus{
+    background-color:white;
+    color:black;
+}
+
+@media (max-width: 360px) {
+    .navbar-burger span {
+        background-color: white;
+    }
+}
+#mobileMenu{
+    height: 100%;
+}

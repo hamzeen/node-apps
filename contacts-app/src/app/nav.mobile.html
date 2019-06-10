@@ -1,0 +1,31 @@
+<nav class="navbar" style="width:360px">
+  <div class="navbar-brand">
+    <a routerLink="/">
+       <h3 class="navbar-item">Contacts</h3>
+    </a>
+    <div class="navbar-burger burger" data-target="mobileMenu" (click)="toggleMobileMenu()"
+       [style.background]="showMobileMenu ? '#2b89e0' : 'transparent'"  *ngIf="authService.isLoggedIn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+  
+<div id="mobileMenu" class="navbar-menu" [style.display]="showMobileMenu ? 'block' : 'none'">
+  <div class="navbar-start">
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link  is-active">
+        Account
+      </a>
+      <div class="navbar-dropdown ">
+        <a class="navbar-item " (click)="logout()">
+          Logout
+        </a>
+    
+        <hr class="navbar-divider">
+        
+      </div>
+    </div>
+  </div>
+</div>
