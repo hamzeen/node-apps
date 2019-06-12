@@ -1,6 +1,6 @@
 {
-  "name": "gistapp",
-  "version": "0.1.0",
+  "name": "reactapp",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.3",
