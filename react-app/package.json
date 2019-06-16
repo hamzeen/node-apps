@@ -1,7 +1,8 @@
 {
-  "name": "reactapp",
+  "name": "react-app",
   "version": "0.0.1",
   "private": true,
+  "private": "http://hamzeen.github.io/node-apps",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "prop-types": "^15.6.0",
@@ -9,7 +10,8 @@
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "typeface-roboto": "0.0.54"
   },
   "scripts": {
     "start": "react-scripts start",

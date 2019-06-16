@@ -5,19 +5,24 @@ import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
     container: {
-        display: 'flex'
+      display: 'flex',
+      alignItems: 'center'
     },
 
     searchButton: {
-        height: '38px',
-        width: '150px',
-        marginTop: '30px',
+      width: '150px',
+      height: '56px',
+      marginTop: '8px'
     },
 
+
     textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
+      flexGrow: 1
     },
+
+    multilineColor:{
+      backgroundColor: 'white'
+    }
 });
 
 class SearchCard extends React.Component {
@@ -49,6 +54,12 @@ class SearchCard extends React.Component {
                     onChange={this.handleChange}
                     margin="normal"
                     variant="filled"
+                    backgroundColor="white"
+                    InputProps={{
+                      classes: {
+                        input: classes.multilineColor
+                      }
+                    }}
                 />
                 <Button
                     variant="contained"

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import helloReducer from './reducers'
 import registerServiceWorker from './registerServiceWorker';
+import "typeface-roboto";
 
 let store = createStore(helloReducer) 
 

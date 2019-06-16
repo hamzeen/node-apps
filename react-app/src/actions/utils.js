@@ -3,7 +3,7 @@ const DEFAULT_DESC = 'No description';
 
 export function formatGistList(respArr, username) {
   return respArr.map(gist => {
-    console.log("GIST::", gist);
+    // console.log("GIST::", gist);
     const { files, name, id, owner } = gist;
 
     const fileTypes = [];

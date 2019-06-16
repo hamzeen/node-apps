@@ -19,7 +19,7 @@ export function search(dispatch, username) {
       return response.json();
     })
     .then(function (res) {
-      console.log("RS:: "+res);
+      // console.log("RS:: "+res);
       dispatch({ type: SEARCH_SUCCESS, payload: formatGistList(res, username) });
     })
     .catch(error => {

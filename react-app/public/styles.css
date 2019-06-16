@@ -1,0 +1,168 @@
+* { margin: 0; }
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'roboto';
+    background: url('photo-1492999104346-cabaa757be8f.jpeg');
+
+    /*background: linear-gradient(
+            -225deg,
+            #ffe29f 0%, #ffa99f 50%,
+            #ff719a 100%);
+    background: linear-gradient( to bottom, #fff, #fff);
+    background-size: cover;*/
+
+    background-position: center;
+    background-size: 140%;
+}
+
+#root {
+  width: 95%;
+  margin: 0 auto;
+}
+
+
+/* resuts container */
+.container { margin: 20px auto; }
+.container .list { margin-bottom: 30px; clear: both; }
+
+.css-omf3o4 {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px -8px;
+}
+
+.container .list-item {
+    max-width: none;
+    min-width: 0;
+    width: calc(33% - 16px);
+    height: auto;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    position: relative;
+    padding: 0;
+
+    -webkit-transition: width .1s ease;
+    -moz-transition: width .1s ease;
+    -o-transition: width .1s ease;
+    transition: width .1s ease;
+}
+
+@media (max-width: 940px) and (min-width: 620px)  {
+    .container .list-item {
+        width: calc(50% - 16px);
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 620px){
+    .container .list-item {
+        width: calc(100% - 16px);
+        margin-bottom: 20px;
+    }
+}
+
+.list-item.css-1p9dq2h.css-s1k1y71 {
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+    transition: all 0.3s ease;
+}
+
+.css-1p9dq2h {
+    width: auto;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    min-width: 240px;
+    max-width: 250px;
+    background-color: rgb(255, 255, 255);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 0px;
+    color: rgb(66, 66, 66);
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    margin: 8px;
+    padding: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.container .list-item .image {
+    background-size: cover;
+}
+.css-g6qnsb {
+    width: calc(100% + 20px);
+    height: 220px;
+    background-color: rgb(252, 252, 252);
+    background-size: contain;
+    margin: -10px -10px 0px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.container .list-item .price {
+    width:70px;
+    height:44px;
+    background-color:#424242;
+    position:absolute;
+    top:160px;
+    left:0;
+    color:#fafafa;
+    font-size:18px;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -ms-flex-align:center;
+    align-items:center;
+    letter-spacing:.03rem
+}
+.container .list-item .info{
+    color:#555;
+    font-size:14px;
+    margin-bottom:4px
+}
+.container .host {
+    border: 2px solid #fefefe;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    background-color: #fefefe;
+    background-size: cover;
+    background-position: center center;
+}
+.container .result-stats{
+    text-align:right;
+    color:#666;
+    font-size:15px
+}
+
+.css-1p9dq2h h2 {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0px;
+    padding: 10px 0px 4px;
+}
+.css-1p9dq2h p {
+    margin: 0px;
+}

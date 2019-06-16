@@ -9,7 +9,9 @@ const styles = theme => ({
   container: {
     display: 'grid',
     gridTemplateColumns: 'repeat(12, 1fr)',
-    gridGap: `${theme.spacing.unit * 3}px`
+    gridGap: `${theme.spacing.unit * 3}px`,
+    fontSize: '19px',
+    fontWeight: '300'
   },
   loader: {
     marginLeft: '50%',
@@ -17,7 +19,7 @@ const styles = theme => ({
   },
   resultDivMove: {
     margin: '0 auto',
-    marginTop: '20px'
+    marginTop: '120px'
   },
   resultDiv: {
     transition: 'margin 700ms',
@@ -42,7 +44,7 @@ const GistView = (props) => {
   const { classes, gists, loading, fetchForks } = props;
 
   const gistsResultCards = gists.map((gist) => {
-    console.log("GIST:::", gist);
+    // console.log("GIST:::", gist);
 
     return <ResultCard
       key={gist.id}
@@ -57,20 +59,14 @@ const GistView = (props) => {
   }, this)
 
   return (
-    <div className={classes.container}>
-      <div style={{ gridColumnEnd: 'span 2' }}></div>
-      <div
-        className={!loading && gists.length === 0 ? classes.resultDiv : classes.resultDivMove}
-        style={{ gridColumnEnd: 'span 8' }}>
-        <SearchContainer />
-        {loading ? <CircularProgress className={classes.loader} /> :
-          gists.length > 0
-            ? <div style={{ width: '550px' }}> {gistsResultCards}</div>
-            : <div className={classes.defaultText}>
-              {'Please type a username and click search'}</div>
-        }
-      </div>
-      <div style={{ gridColumnEnd: 'span 2' }}></div>
+    <div className={!loading && gists.length === 0 ? classes.resultDiv : classes.resultDivMove}>
+      <SearchContainer />
+      {loading ? <CircularProgress className={classes.loader} /> :
+        gists.length > 0
+          ? <div class="container clearfix"><div class="css-omf3o4 list"> {gistsResultCards}</div></div>
+          : <div className={classes.defaultText}>
+            {'Please type a username and click search'}</div>
+      }
     </div>
   )
 }
@@ -78,7 +74,7 @@ const GistView = (props) => {
 GistView.propTypes = {
   onClick: PropTypes.func.isRequired,
   reset: PropTypes.func.isRequired,
-  message: PropTypes.string.isRequired
+  /*message: PropTypes.string.isRequired*/
 }
 
 export default withStyles(styles)(GistView);
